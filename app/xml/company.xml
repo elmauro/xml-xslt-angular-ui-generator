@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<inscription name="dynamic UI">
+  <properties
+    entity ="company"
+    description ="Company"
+    translate ="COMPANY">
+  </properties>
+
+  <control name="id"
+           type="text"
+           visible="false"
+           grid_visible="false"
+           translate=""/>
+
+  <control name="name"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="COMPANY_NAME"/>
+
+  <control name="logo"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="LOGO"/>
+
+  <control name="message"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="MESSAGE"/>
+
+  <control name="default_lang"
+           type="select"
+           visible="true"
+           grid_visible="true"
+           field_of_query="name"
+           field_of_select="name"
+           translate="DEFAULT_LANG"/>
+
+  <control name="address"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="ADDRESS"/>
+
+  <control name="company_type"
+           type="select"
+           visible="true"
+           grid_visible="true"
+           field_of_query="name"
+           field_of_select="name"
+           translate="COMPANY_TYPE"/>
+
+  <control name="phone"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="PHONE"/>
+
+  <control name="logging"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="LOGGING"/>
+
+</inscription>
+

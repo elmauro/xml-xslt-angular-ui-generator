@@ -1,0 +1,9 @@
+<div>
+  <div id="crudCompany"></div>
+  <div id="gridCompany"></div>
+</div>
+
+<script>
+    generator.Render.xml2Html('xml/company.xml','xslt/CRUD.xslt','crudCompany');
+    generator.Render.xml2Html('xml/company.xml','xslt/GRID.xslt','gridCompany');
+</script>

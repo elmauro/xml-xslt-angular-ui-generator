@@ -41,7 +41,7 @@ gulp.task('copy-bower-components', function () {
     .pipe(gulp.dest('dist/bower_components'));
 });
 gulp.task('copy-html-files', function () {
-  gulp.src(['./app/*.html','./app/**/*.html'])
+  gulp.src(['./app/*.html','./app/**/*.html', './app/**/*.xml', './app/**/*.xslt'])
     .pipe(gulp.dest('dist/'));
 });
 gulp.task('connect', function () {

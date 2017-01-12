@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menubar>
+  <properties
+      description ="ui-generator" >
+  </properties>
+    <menu text="Company Management" url="" translate="COMPANY.COMPANY">
+      <submenu text="Company" url="company" translate="COMPANY.MENU"></submenu>
+    </menu>
+    <menu text="Users" url="users" translate="USER.USERS"></menu>
+</menubar>

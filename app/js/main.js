@@ -9,19 +9,18 @@
     '$stateProvider',
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise('/home');
+      //$urlRouterProvider.otherwise('/UIApp');
     
       $stateProvider
 
           // HOME STATES AND NESTED VIEWS ========================================
-          .state('home', {
-              url: '/home',
-              templateUrl: 'partials/partial-home.html',
-              controller: "MainController"
+          .state('UIApp', {
+              url: '/UIApp',
+              templateUrl: 'partials/partial-home.html'
           })
 
           // nested list with custom controller
-          .state('home.list', {
+          .state('UIApp.list', {
               url: '/list',
               templateUrl: 'partials/partial-home-list.html',
               controller: function($scope) {
@@ -30,14 +29,24 @@
           })
 
           // nested list with just some random string data
-          .state('home.paragraph', {
+          .state('UIApp.paragraph', {
               url: '/paragraph',
               template: 'I could sure use a drink right now.'
           })
 
-          
+          .state('UIApp.company', {
+            url: "/company",
+            templateUrl: 'partials/company.html'
+          })
+
+          .state('UIApp.users', {
+              url: '/users',
+              templateUrl: 'partials/users.html',
+              controller: 'MainController'
+          })
+
           // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-          .state('home.about', {
+          .state('UIApp.about', {
               url: '/about',
               templateUrl: 'partials/partial-about.html'
           });

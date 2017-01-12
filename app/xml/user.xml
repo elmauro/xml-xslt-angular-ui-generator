@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<inscription name="dynamic UI">
+  <properties
+    entity ="user"
+    description ="User"
+    translate ="USER">
+  </properties>
+
+  <control name="id"
+           type="text"
+           visible="false"
+           grid_visible="false"
+           translate=""/>
+
+  <control name="name"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="NAME"/>
+
+  <control name="last_name"
+           type="text"
+           visible="true"
+           grid_visible="false"
+           translate="LAST_NAME"/>
+
+  <control name="email"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="EMAIL"/>
+
+  <control name="phone"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="PHONE"/>
+
+  <control name="cell_phone"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="CELL_PHONE"/>
+
+  <control name="language"
+           type="select"
+           visible="true"
+           grid_visible="false"
+           field_of_query="name"
+           field_of_select="name"
+           translate="LANGUAGE"/>
+
+  <control name="password"
+           type="text"
+           visible="true"
+           grid_visible="false"
+           translate="PASSWORD"/>
+
+  <control name="admin"
+           type="checkbox"
+           visible="true"
+           grid_visible="true"
+           text="CHECKBOX_ROLE"
+           translate="ROLE"/>
+
+</inscription>
+
