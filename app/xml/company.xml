@@ -64,5 +64,11 @@
            grid_visible="true"
            translate="LOGGING"/>
 
+  <control name="probando"
+           type="text"
+           visible="true"
+           grid_visible="true"
+           translate="PHONE"/>
+
 </inscription>
 

@@ -3,20 +3,37 @@
 'use strict';
 
 
-  angular.module('UIApp', ['ui.router'])
+  angular.module('UIApp', ['ui.router', 'pascalprecht.translate'])
+
+  .config(function ($translateProvider) {
+    $translateProvider.translations('en', {
+      TITLE: 'Hello',
+      FOO: 'This is a paragraph.',
+      BUTTON_LANG_EN: 'english',
+      BUTTON_LANG_DE: 'german'
+    });
+    $translateProvider.translations('de', {
+      TITLE: 'Hallo',
+      FOO: 'Dies ist ein Paragraph.',
+      BUTTON_LANG_EN: 'englisch',
+      BUTTON_LANG_DE: 'deutsch'
+    });
+    $translateProvider.preferredLanguage('en');
+  })
 
   .config([
     '$stateProvider',
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-      //$urlRouterProvider.otherwise('/UIApp');
+      $urlRouterProvider.otherwise('/UIApp');
     
       $stateProvider
 
           // HOME STATES AND NESTED VIEWS ========================================
           .state('UIApp', {
               url: '/UIApp',
-              templateUrl: 'partials/partial-home.html'
+              templateUrl: 'partials/partial-home.html',
+              controller: 'MainController'
           })
 
           // nested list with custom controller
@@ -57,9 +74,14 @@
   angular.module('UIApp')
 
   .controller('MainController', [
-    '$scope',
-    function($scope) {
+    '$scope','$translate',
+    function($scope, $translate) {
       $scope.test = "Testing...";
+      $scope.changeLanguage = function (key) {
+        $translate.use(key);
+      };
+      $scope.isNew = true;
+      $scope.showList = false;
     }
   ]);
 
