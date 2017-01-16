@@ -53,7 +53,8 @@
 
           .state('UIApp.company', {
             url: "/company",
-            templateUrl: 'partials/company.html'
+            templateUrl: 'partials/company.html',
+            controller: 'companyController'
           })
 
           .state('UIApp.users', {
@@ -68,21 +69,6 @@
               templateUrl: 'partials/partial-about.html'
           });
       }
-  ]);
-
-  //Load controller
-  angular.module('UIApp')
-
-  .controller('MainController', [
-    '$scope','$translate',
-    function($scope, $translate) {
-      $scope.test = "Testing...";
-      $scope.changeLanguage = function (key) {
-        $translate.use(key);
-      };
-      $scope.isNew = true;
-      $scope.showList = false;
-    }
   ]);
 
 }());
