@@ -1,0 +1,101 @@
+<script src="js/content.js"></script>
+
+<div class="div3">
+    <section>
+        <H3>
+            <div id="name" style="display: inline; float: left;">My Content Overview</div>
+        </H3>
+        <div id="popup" class="popup" onclick="myFunction()" style="position: absolute; display: block; cursor: pointer;
+            padding: 5px 20px; color: #4caf50; margin-top: -5px; margin-left: 370px;">
+            <H5 id="date">Select Date</H5>
+        </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+                <H5 style="color: #9e9e9e;">Select Date Range</H5>
+                <div id="selector1">
+                    <div id="1" class="list-group-item">Last 7 Days</div>
+                    <div id="2" class="list-group-item">Last 30 Days</div>
+                    <div id="3" class="list-group-item">Year to Date</div>
+                    <div id="4" class="list-group-item">Last 12 Months</div>
+                    <div id="5" class="list-group-item">Custom Range</div>
+                    <div id="dateModal" class="modal">
+                      <div class="modal-content">
+                            <H5 style="color: #9e9e9e;">Select Date Range</H5>
+                            <div style="height: 100px;">
+                                <div style="float: left; display: inline;">
+                                    <H6>
+                                        Initial Date:
+                                    </H6>
+                                    <input type="text" id="datepicker1">
+                                </div>
+                                <div style="float: left; display: inline; margin-left: 10px;">
+                                    <H6>
+                                        Final Date:
+                                    </H6>
+                                    <input type="text" id="datepicker2">
+                                </div>
+                                <div>
+                                    <label id="done" style="background-color: orange; color: white; border: 5px solid; border-color: orange; float: right; margin-top: 10px; margin-right: 5px;">Done</label>
+                                </div>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+                <br>
+                <H5 style="color: #9e9e9e;">Include Content By</H5>
+                <div id="selector2">
+                    <div id="6" href="#" class="list-group-item">Creation Date</div>
+                    <div id="7" href="#" class="list-group-item">First Enrrollment Date</div>
+                    <div id="8" href="#" class="list-group-item">First Viewed Date</div>
+                </div>
+          </div>
+        </div> 
+        <div style="display: inline; float: right; margin-top: -25px; margin-right: -120px;" id="chart-content1"></div>
+        <br>
+        <br>
+        <article>
+            <div class="div2" style="width: 15%; border: 1px solid #d0d0d0; float: left; display: inline;">
+                <H6>Active Content</H6> 
+                <H3 style="margin-top: -10px; color: #37929c">
+                    <div id="courses_to_complete">32</div>
+                </H3>
+            </div>
+            <div class="div2" style="width: 16%; border: 1px solid #d0d0d0; float: left; display: inline; margin-left: 10px;">
+                <H6>Inactive Content</H6> 
+                <H3 style="margin-top: -10px; color: #37929c">
+                        <div id="total_enrrolments">8</div> 
+                </H3>
+            </div>
+            <div class="div2" style="width: 16%; border: 1px solid #d0d0d0; float: left; display: inline; margin-left: 10px;">
+                <H6>Archived Content</H6> 
+                <H3 style="margin-top: -10px; color: #37929c">
+                        <div id="total_enrrolments">6</div> 
+                </H3>
+            </div>      
+        </article>
+        <br>
+        <br>
+        <br>    
+        <div style="width: 60%;">
+            <hr>
+        </div>
+        <div class="div2" style="width: 15%; border: 1px solid #d0d0d0; float: left; display: inline;">
+            <H6>Avg. Length</H6> 
+            <H3 style="margin-top: -10px; color: #37929c">
+                <div id="courses_to_complete">32</div>
+            </H3>
+        </div>
+        <div class="div2" style="width: 20%; border: 1px solid #d0d0d0; float: left; display: inline; margin-left: 15px;">
+            <H6>Avg Viewing Time</H6> 
+            <H3 id="courses_in_curriculumns" style="float: left; display: inline; margin-top: -10px; color: #37929c;">4</H3>
+            <H6 style="float: left; display: inline; margin-top: -1px; margin-left: 5px;"> min</H6>
+            <H3 id="courses_in_curriculumns" style="float: left; display: inline; margin-top: -10px; margin-left: 10px; color: #37929c;">41</H3>
+            <H6 style="float: left; display: inline; margin-top: -1px; margin-left: 5px;"> sec</H6>
+        </div>
+    </section>
+</div>
+<script src="js/pikaday.js"></script>
+<script>
+    var picker1 = new Pikaday({ field: document.getElementById('datepicker1') });
+    var picker2 = new Pikaday({ field: document.getElementById('datepicker2') });
+</script>

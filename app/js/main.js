@@ -63,6 +63,24 @@
               controller: 'MainController'
           })
 
+          .state('UIApp.content', {
+              url: '/content',
+              templateUrl: 'partials/content.html',
+              controller: 'MainController'
+          })
+
+          .state('UIApp.training', {
+              url: '/training',
+              templateUrl: 'partials/training.html',
+              controller: 'MainController'
+          })
+
+          .state('UIApp.coaching', {
+              url: '/coaching',
+              templateUrl: 'partials/coaching.html',
+              controller: 'MainController'
+          })
+
           // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
           .state('UIApp.about', {
               url: '/about',

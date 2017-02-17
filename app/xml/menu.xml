@@ -7,4 +7,7 @@
       <submenu text="Company" url="company" translate="COMPANY.MENU"></submenu>
     </menu>
     <menu text="Users" url="users" translate="USER.USERS"></menu>
+    <menu text="Content" url="content" translate="content"></menu>
+    <menu text="Training" url="training" translate="training"></menu>
+    <menu text="Coaching" url="coaching" translate="coaching"></menu>
 </menubar>
