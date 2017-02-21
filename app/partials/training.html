@@ -1,4 +1,6 @@
 <script src="js/training.js"></script>
+<script src="js/dateSelector.js"></script>
+<script src="js/authorSelector.js"></script>
 
 <div class="div3">
     <section>
@@ -14,31 +16,8 @@
         <div style="display: inline; float: right; margin-top: -25px; margin-right: -120px;" id="chart-training1"></div>
         <H6>
             <div id="position" style="padding:50px 150px;">National Account Manager Sales</div>
-            <div id="popup" class="popup" onclick="myFunction()">
-                <H5>Select Date</H5>
-                <div class="popuptext" id="myPopup"></div>
-            </div>
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                    <H5 style="color: #9e9e9e;">Select Date Range</H5>
-                    <div id="selector1">
-                        <div id="1" class="list-group-item">Last 7 Days</div>
-                        <div id="2" class="list-group-item">Last 30 Days</div>
-                        <div id="3" class="list-group-item">Year to Date</div>
-                        <div id="4" class="list-group-item">Last 12 Months</div>
-                        <div id="5" class="list-group-item">Custom Range</div>
-                    </div>
-                    <br>
-                    <H5 style="color: #9e9e9e;">Include Content By</H5>
-                    <div id="selector2">
-                        <div id="6" href="#" class="list-group-item">Creation Date</div>
-                        <div id="7" href="#" class="list-group-item">First Enrrollment Date</div>
-                        <div id="8" href="#" class="list-group-item">First Viewed Date</div>
-                    </div>
-              </div>
-
-            </div>
         </H6>
+        <div id="dateSelector1" style="margin-top: -10px;"></div>
         <article>
             <div class="div2" style="width: 20%; border: 1px solid orange; float: left; display: inline;">
                 <H6>Courses to Complete</H6> <H3 style="margin-top: -10px; color: orange"><div id="courses_to_complete">9</div></H3>
@@ -77,30 +56,10 @@
         <H3>
             <div id="name" style="display: inline; float: left; padding:0px 20px;">Courses Created By</div>
         </H3>
-        <div id="popup" class="popup" onclick="myFunction()" style="position: absolute; display: block; cursor: pointer;
-    padding: 5px 20px; color: #4caf50; margin-top: -5px; margin-left: 370px;">
-            <H5>Select Date</H5>
-            <div class="popuptext" id="myPopup"></div>
-        </div>
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-                <H5 style="color: #9e9e9e;">Select Date Range</H5>
-                <div id="selector1">
-                    <div id="1" class="list-group-item">Last 7 Days</div>
-                    <div id="2" class="list-group-item">Last 30 Days</div>
-                    <div id="3" class="list-group-item">Year to Date</div>
-                    <div id="4" class="list-group-item">Last 12 Months</div>
-                    <div id="5" class="list-group-item">Custom Range</div>
-                </div>
-                <br>
-                <H5 style="color: #9e9e9e;">Include Content By</H5>
-                <div id="selector2">
-                    <div id="6" href="#" class="list-group-item">Creation Date</div>
-                    <div id="7" href="#" class="list-group-item">First Enrrollment Date</div>
-                    <div id="8" href="#" class="list-group-item">First Viewed Date</div>
-                </div>
-          </div>
-        </div>
+        <div id="authorSelector1" style="display: inline;
+    float: left;
+    position: absolute;
+    z-index: 15;"></div>
         <div style="display: inline; float: right; margin-top: -25px; margin-right: -120px;" id="chart-training2"></div>
         <br>
         <br>
@@ -125,30 +84,8 @@
             </H3>
         </div>       
         </article>
-        <div id="popup" class="popup" onclick="myFunction()" style="position: absolute; display: block; cursor: pointer;
-    padding: 5px 20px; color: #4caf50; margin-top: -40px; margin-left: 130px;">
-            <H5>Select Date</H5>
-            <div class="popuptext" id="myPopup"></div>
-        </div>
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-                <H5 style="color: #9e9e9e;">Select Date Range</H5>
-                <div id="selector1">
-                    <div id="1" class="list-group-item">Last 7 Days</div>
-                    <div id="2" class="list-group-item">Last 30 Days</div>
-                    <div id="3" class="list-group-item">Year to Date</div>
-                    <div id="4" class="list-group-item">Last 12 Months</div>
-                    <div id="5" class="list-group-item">Custom Range</div>
-                </div>
-                <br>
-                <H5 style="color: #9e9e9e;">Include Content By</H5>
-                <div id="selector2">
-                    <div id="6" href="#" class="list-group-item">Creation Date</div>
-                    <div id="7" href="#" class="list-group-item">First Enrrollment Date</div>
-                    <div id="8" href="#" class="list-group-item">First Viewed Date</div>
-                </div>
-          </div>
-        </div>
+        <div id="dateSelector2" style="position: absolute; display: block; cursor: pointer;
+    padding: 5px 20px; margin-top: -25px; margin-left: 110px;"></div>
         <br>
         <br>
         <br>
@@ -178,3 +115,8 @@
         </article>
     </section>
 </div>
+<script src="js/pikaday.js"></script>
+<script>
+    var picker1 = new Pikaday({ field: document.getElementById('datepicker1') });
+    var picker2 = new Pikaday({ field: document.getElementById('datepicker2') });
+</script>

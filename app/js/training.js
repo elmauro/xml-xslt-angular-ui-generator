@@ -1,9 +1,16 @@
-(function() {
+var filter = {
+    "initial_date": "",
+    "final_date": "",
+    "period_type": 0,
+    "include_content": 0
+};
 
-    var modal;
+(function() {
 
 	var chart1 = 'chart-training1';
     var chart2 = 'chart-training2';
+    var modal;
+    var modalDate;
     
     var data1 = [
                     {
@@ -52,56 +59,26 @@
         }).render();
     }
 
-    var div1 = document.getElementById('1');
-    var div2 = document.getElementById('2');
-    var div3 = document.getElementById('3');
-    var div4 = document.getElementById('4');
-    var div5 = document.getElementById('5');
-    var div6 = document.getElementById('6');
-    var div7 = document.getElementById('7');
-    var div8 = document.getElementById('8');
+    setHtml('../partials/dateSelector.html','dateSelector2');
+    setHtml('../partials/authorSelector.html','authorSelector1');
+    //setHtml('../partials/dateSelector.html','dateSelector1');
 
-    div_clic(div1);
-    div_clic(div2);
-    div_clic(div3);
-    div_clic(div4);
-    div_clic(div5);
-    div_clic(div6);
-    div_clic(div7);
-    div_clic(div8);
+    function loadDoc(dname) {
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
 
-    function div_clic(div){
-        div.onclick = function(event)
-        {
-            var i = 1;
-            if(parseInt(event.srcElement.id) <= 5){
-                for(i=1; i<=5; i++){
-                    document.getElementById(i.toString()).classList.remove("list-group-item-new");
-                    document.getElementById(i.toString()).className = "list-group-item";
-                }
-            }
-            else{
-                i = 6;
-                for(i=6; i<=8; i++){
-                    document.getElementById(i.toString()).classList.remove("list-group-item-new");
-                    document.getElementById(i.toString()).className = "list-group-item";
-                }
-            }
-
-            document.getElementById(event.srcElement.id).className = "list-group-item-new";
-
-        } ;   
+        xhttp.open("GET",dname,false);
+        xhttp.send("");
+        return xhttp.responseText;
     }
 
-    document.getElementById('popup').onclick = function(event)
-    {
-        modal = document.getElementById('myModal');
-        modal.style.display = "block";
-    };
+    function setHtml(HTML, id) {
+        var html = loadDoc(HTML);
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
+        document.getElementById(id).innerHTML = html;
+    }
+
 })();
