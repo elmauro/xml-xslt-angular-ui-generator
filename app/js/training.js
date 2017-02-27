@@ -2,7 +2,9 @@ var filter = {
     "initial_date": "",
     "final_date": "",
     "period_type": 0,
-    "include_content": 0
+    "include_content": 0,
+    "group": 0,
+    "individual": 0
 };
 
 (function() {
@@ -13,19 +15,19 @@ var filter = {
     var modalDate;
     
     var data1 = [
-                    {
-                        "label": "Completed",
-                        "value": "31"
-                    }, 
-                    {
-                        "label": "Courses In Progress",
-                        "value": "5"
-                    }, 
-                    {
-                        "label": "Enrolled",
-                        "value": "4"
-                    }
-                ];
+        {
+            "label": "Completed",
+            "value": "31"
+        }, 
+        {
+            "label": "Courses In Progress",
+            "value": "5"
+        }, 
+        {
+            "label": "Enrolled",
+            "value": "4"
+        }
+    ];
 
     render(chart1, data1);
     render(chart2, data1);
@@ -59,8 +61,10 @@ var filter = {
         }).render();
     }
 
+    document.getElementById("authorSelect").innerHTML = 'James Morse';
+
+    //setHtml('../partials/authorSelector.html','authorSelector1');
     setHtml('../partials/dateSelector.html','dateSelector2');
-    setHtml('../partials/authorSelector.html','authorSelector1');
     //setHtml('../partials/dateSelector.html','dateSelector1');
 
     function loadDoc(dname) {

@@ -51,6 +51,7 @@ var filter = {
         }).render();
     }
 
+    setHtml('../partials/authorSelector.html','authorSelector1');
     setHtml('../partials/dateSelector.html','dateSelector');
 
     function loadDoc(dname) {

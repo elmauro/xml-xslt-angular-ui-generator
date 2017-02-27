@@ -42,9 +42,11 @@ var authorModal;
 
             if(event.srcElement.parentElement.id === 'author'){
                 document.getElementById(event.srcElement.id).className = "list-group-item-new";
+                filter.individual = parseInt(event.srcElement.id.split("author_")[1]);
             }
             else{
                 document.getElementById(event.srcElement.parentElement.id).className = "list-group-item-new";
+                filter.individual = parseInt(event.srcElement.parentElement.id.split("author_")[1]);
             }
         } ;   
     }
@@ -63,9 +65,11 @@ var authorModal;
 
             if(event.srcElement.parentElement.id === 'group'){
                 document.getElementById(event.srcElement.id).className = "list-group-item-new";
+                filter.group = parseInt(event.srcElement.id.split("group_")[1]);
             }
             else{
                 document.getElementById(event.srcElement.parentElement.id).className = "list-group-item-new";
+                filter.group = parseInt(event.srcElement.parentElement.id.split("group_")[1]);
             }
         } ;   
     }

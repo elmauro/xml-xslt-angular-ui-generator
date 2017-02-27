@@ -98,18 +98,6 @@ var modalDate;
         if(modal){
             if (event.target == modal) {
                 modal.style.display = "none";
-
-                var i = 1;
-                for(i=1; i<=5; i++){
-                    document.getElementById(i.toString()).classList.remove("list-group-item-new");
-                    document.getElementById(i.toString()).className = "list-group-item";
-                }
-
-                i = 6;
-                for(i=6; i<=8; i++){
-                    document.getElementById(i.toString()).classList.remove("list-group-item-new");
-                    document.getElementById(i.toString()).className = "list-group-item";
-                }
             }
         }
 
