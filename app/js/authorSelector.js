@@ -34,7 +34,7 @@ var authorModal;
         {
             var author;
 
-            for(i=0; i<authors.length; i++){
+            for(var i=0; i<authors.length; i++){
                 author = authors[i];
                 document.getElementById('author_' + author.id).classList.remove("list-group-item-new");
                 document.getElementById('author_' + author.id).className = "list-group-item";
@@ -56,7 +56,7 @@ var authorModal;
         {
             var group;
 
-            for(i=0; i<groups.length; i++){
+            for(var i=0; i<groups.length; i++){
                 group = groups[i];
 
                 document.getElementById('group_' + group.id).classList.remove("list-group-item-new");
@@ -75,12 +75,12 @@ var authorModal;
     }
 
     function process(){
-        var i=0;
+        var i;
         var group;
         var author;
         var htmlAuthors = '';
         var htmlGroups = '';
-        var div = '';
+        var div;
 
         for(i=0; i< authors.length; i++){
             author = authors[i];
@@ -114,7 +114,7 @@ var authorModal;
         document.getElementById('author').innerHTML = htmlAuthors;
         document.getElementById('group').innerHTML = htmlGroups;
 
-        var divClic = '';
+        var divClic;
 
         for(i=0; i< authors.length; i++){
             author = authors[i];
@@ -135,7 +135,7 @@ var authorModal;
         document.getElementById("authorSelect").innerHTML = 'James Morse';   
     }
 
-    document.getElementById('authorPopup').onclick = function(event)
+    document.getElementById('authorPopup').onclick = function()
     {
         authorModal = document.getElementById('authorModal');
         authorModal.style.display = "block";

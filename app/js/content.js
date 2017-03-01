@@ -20,41 +20,13 @@ var filter = {
                     }
                 ];
 
-    render(chart5, data1);
-
-    function render(div, data){
-        var revenueChart = new FusionCharts({
-            type: 'doughnut2d',
-            renderAt: div,
-            width: '390',
-            height: '260',
-            dataFormat: 'json',
-            dataSource: {
-                "chart": {
-                    "paletteColors": "#37929c,#3e6c6f",
-                    "bgColor": "#ffffff",
-                    "showBorder": "0",
-                    "use3DLighting": "0",
-                    "showShadow": "0",
-                    "enableSmartLabels": "0",
-                    "startingAngle": "160",
-                    "showPercentInTooltip": "0",
-                    "showLabels": "0",
-                    "legendShadow": "0",
-                    "legendBorderAlpha": "0",
-                    "defaultCenterLabel": " Total Views",
-                    "showTooltip": "1",
-                    "decimals": "0"
-                },
-                "data": data
-            }
-        }).render();
-    }
+    render(chart5, data1, "", " Total Views", "#37929c,#3e6c6f");
 
     setHtml('../partials/authorSelector.html','authorSelector1');
     setHtml('../partials/dateSelector.html','dateSelector');
 
     function loadDoc(dname) {
+        var xhttp;
         if (window.XMLHttpRequest) {
             xhttp = new XMLHttpRequest();
         } else {

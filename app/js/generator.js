@@ -8,7 +8,9 @@ generator.namespace = function( nameSpaceString ) {
 
     //if any nameSpace level doesn't exist, create it
     for ( var i=0, imax=names.length ; i < imax; i++ ) {
-        if ( !parent[names[i]] ) parent[names[i]]={};
+        if ( !parent[names[i]] ) 
+            parent[names[i]]={};
+        
         parent = parent[names[i]];
     }
 };
@@ -16,6 +18,8 @@ generator.namespace = function( nameSpaceString ) {
 generator.namespace("generator.Render");
 
 generator.Render.loadXMLDoc = function(dname) {
+    var xhttp;
+
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     } else {
@@ -31,12 +35,12 @@ generator.Render.loadXMLDoc = function(dname) {
 };
 
 generator.Render.xml2Html = function(XML, XSLT, id) {
-    xml = generator.Render.loadXMLDoc(XML);
-    xsl = generator.Render.loadXMLDoc(XSLT);
+    var xml = generator.Render.loadXMLDoc(XML);
+    var xsl = generator.Render.loadXMLDoc(XSLT);
 
     // code for IE
     if (window.ActiveXObject) {
-        ex = xml.transformNode(xsl);
+        var ex = xml.transformNode(xsl);
 
         generator.Render.remove(id);
         document.getElementById(id).innerHTML = ex;
@@ -45,9 +49,9 @@ generator.Render.xml2Html = function(XML, XSLT, id) {
     // code for Mozilla, Firefox, Opera,etc.
     else if (document.implementation &&
         document.implementation.createDocument) {
-        xsltProcessor=new XSLTProcessor();
+        var xsltProcessor=new XSLTProcessor();
         xsltProcessor.importStylesheet(xsl);
-        resultDocument = xsltProcessor.transformToFragment(xml,document);
+        var resultDocument = xsltProcessor.transformToFragment(xml,document);
 
         generator.Render.remove(id);
 

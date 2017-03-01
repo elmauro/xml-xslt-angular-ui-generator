@@ -2,6 +2,7 @@ var modal;
 var modalDate;
 
 (function() {
+    //var authorModal;
 
     var div1 = document.getElementById('1');
     var div2 = document.getElementById('2');
@@ -24,8 +25,8 @@ var modalDate;
     function div_clic(div){
         div.onclick = function(event)
         {
-            var i = 1;
-            var date = '';
+            var i;
+            var date;
 
             if(parseInt(event.srcElement.id) <= 5){
                 for(i=1; i<=5; i++){
@@ -36,7 +37,6 @@ var modalDate;
                 filter.period_type = parseInt(event.srcElement.id);
             }
             else{
-                i = 6;
                 for(i=6; i<=8; i++){
                     document.getElementById(i.toString()).classList.remove("list-group-item-new");
                     document.getElementById(i.toString()).className = "list-group-item";
@@ -69,15 +69,15 @@ var modalDate;
         } ;   
     }
 
-    document.getElementById('popup').onclick = function(event)
+    document.getElementById('popup').onclick = function()
     {
         modal = document.getElementById('myModal');
         modal.style.display = "block";
     };
 
-    document.getElementById('done').onclick = function(event)
+    document.getElementById('done').onclick = function()
     {
-        var date = '';
+        var date;
 
         if(modal){
             modal.style.display = "none";
@@ -95,22 +95,16 @@ var modalDate;
     };
 
     window.onclick = function(event) {
-        if(modal){
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+        if(modal && event.target === modal) {
+            modal.style.display = "none";
         }
 
-        if(modalDate){
-            if (event.target == modalDate) {
-                modalDate.style.display = "none";
-            }
+        if(modalDate && event.target === modalDate) {
+            modalDate.style.display = "none";
         }
 
-        if(authorModal){
-            if (event.target == authorModal) {
-                authorModal.style.display = "none";
-            }
+        if(authorModal && event.target === authorModal) {
+            authorModal.style.display = "none";
         }
     };
 
@@ -130,7 +124,7 @@ var modalDate;
         var day = date.getUTCDate();
         var year = date.getUTCFullYear();
 
-        strDate = monthNames[month] + " " + day + ", " + year;
+        var strDate = monthNames[month] + " " + day + ", " + year;
         
         switch (option) {
         case '1':
@@ -155,6 +149,10 @@ var modalDate;
             strDate = monthNames[month] + " " + day + ", " + year;
             
             date = new Date(picker1.getDate());
+            break;
+        default:
+            date.setDate(date.getDate()-90);
+            break;
         }
         
         month = date.getUTCMonth(); //months from 1-12

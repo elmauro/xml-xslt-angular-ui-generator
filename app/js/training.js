@@ -11,8 +11,6 @@ var filter = {
 
 	var chart1 = 'chart-training1';
     var chart2 = 'chart-training2';
-    var modal;
-    var modalDate;
     
     var data1 = [
         {
@@ -29,45 +27,17 @@ var filter = {
         }
     ];
 
-    render(chart1, data1);
-    render(chart2, data1);
-
-    function render(div, data){
-        var revenueChart = new FusionCharts({
-            type: 'doughnut2d',
-            renderAt: div,
-            width: '390',
-            height: '260',
-            dataFormat: 'json',
-            dataSource: {
-                "chart": {
-                    "paletteColors": "#8bc34a,#37929c,#3e6c6f",
-                    "bgColor": "#ffffff",
-                    "showBorder": "0",
-                    "use3DLighting": "0",
-                    "showShadow": "0",
-                    "enableSmartLabels": "0",
-                    "startingAngle": "160",
-                    "showPercentInTooltip": "0",
-                    "showLabels": "0",
-                    "legendShadow": "0",
-                    "legendBorderAlpha": "0",
-                    "defaultCenterLabel": " Completed",
-                    "showTooltip": "1",
-                    "decimals": "0"
-                },
-                "data": data
-            }
-        }).render();
-    }
+    render(chart1, data1, "", " Completed", "#8bc34a,#37929c,#3e6c6f");
+    render(chart2, data1, "", " Completed", "#8bc34a,#37929c,#3e6c6f");
 
     document.getElementById("authorSelect").innerHTML = 'James Morse';
 
-    //setHtml('../partials/authorSelector.html','authorSelector1');
+    /*** setHtml('../partials/authorSelector.html','authorSelector1'); ***/
     setHtml('../partials/dateSelector.html','dateSelector2');
-    //setHtml('../partials/dateSelector.html','dateSelector1');
+    /*** setHtml('../partials/dateSelector.html','dateSelector1'); ***/
 
     function loadDoc(dname) {
+        var xhttp;
         if (window.XMLHttpRequest) {
             xhttp = new XMLHttpRequest();
         } else {
