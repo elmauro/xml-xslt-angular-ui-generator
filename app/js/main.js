@@ -2,7 +2,7 @@
 
 'use strict';
 
-  angular.module('UIApp', ['ui.router'])
+  angular.module('UIApp', ['ui.router','btford.socket-io'])
 
   .config([
     '$stateProvider',
@@ -43,31 +43,50 @@
       }
   ]);
 
+  angular.module('UIApp')
+
+  .service('SocketService', function (socketFactory) {
+      var socket = socketFactory({
+
+          ioSocket: io.connect('http://10.3.8.194:8080')
+
+      });
+      return socket;
+  });
+
   //Load controller
   angular.module('UIApp')
 
-  .controller('MainController', [
-    '$scope', '$http',
-    function($scope, $http) {
+  .controller('MainController',
+    function($scope, $http, SocketService) {
+      var turnOnOff;
+
+      SocketService.on('turnOff', function (msg) {
+        turnOnOff = $('.active').text();
+        if(turnOnOff === "OFF"){
+          $('.btn-toggle .btn').toggleClass('active');
+          $('.btn-toggle .btn').toggleClass('btn-primary');
+          $('.btn-toggle .btn').toggleClass('btn-default');
+        }
+      });
+
       $('.btn-toggle').click(function() {
           $(this).find('.btn').toggleClass('active');  
 
           if ($(this).find('.btn-primary').length>0) {
             
             $(this).find('.btn').toggleClass('btn-primary');
+
+            turnOnOff = $(this).find('.btn-primary').text() === 'ON'?'On':'Off';
             
             $http({
               method: 'POST',
-              url: 'http://10.3.8.194:8080/microservices/turnOnOffLed'
+              url: 'http://10.3.8.194:8080/microservices/turn' + turnOnOff + 'Led'
             }).then(function successCallback(response) {
-                
+            
             }, function errorCallback(response) {
                 
             });
-
-            setTimeout(function() {
-                $('.btn-toggle .btn').toggleClass('btn-primary');
-            }, 5000);
           }
           if ($(this).find('.btn-danger').length>0) {
             $(this).find('.btn').toggleClass('btn-danger');
@@ -85,6 +104,6 @@
 
       $scope.test = "Testing...";
     }
-  ]);
+  );
 
 }());
