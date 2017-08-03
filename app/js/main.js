@@ -48,7 +48,7 @@
   .service('SocketService', function (socketFactory) {
       var socket = socketFactory({
 
-          ioSocket: io.connect('http://10.3.8.194:8080')
+          ioSocket: io.connect('http://10.3.9.1:8080')
 
       });
       return socket;
