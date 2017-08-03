@@ -81,7 +81,7 @@
             
             $http({
               method: 'POST',
-              url: 'http://10.3.8.194:8080/microservices/turn' + turnOnOff + 'Led'
+              url: 'http://10.3.9.1:8080/microservices/turn' + turnOnOff + 'Led'
             }).then(function successCallback(response) {
             
             }, function errorCallback(response) {
